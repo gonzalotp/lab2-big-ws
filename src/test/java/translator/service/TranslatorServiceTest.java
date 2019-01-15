@@ -25,4 +25,10 @@ public class TranslatorServiceTest {
     assertEquals("Esto es una prueba de servicio de traducción", translatedText.getTranslation());
   }
 
+  @Test
+  public void englishToFinnishTest(){
+    TranslatedText translatedText = translatorService.translate("en", "fi", "This is a test of translation service");
+    assertEquals("Tämä on testi käännöspalvelu", translatedText.getTranslation());
+  }
+
 }
