@@ -1,5 +1,9 @@
 language: java
 jdk:
 - oraclejdk8
+env:
+  global:
+    secure: mBspD13P+yS/DtPfL2o2j8PgpsbcCcYhsJnFF+9tJ2fj0kS1ksJfLW6Hud/iigufQASILwHFQAymELWhW4Oi6Vsmqj12RLWOfTM4rs+V4/MPKgnTQQpiTQxEcHBrlAgg7smcEmYvHHHSJQBRl1R4iMN1LmGCcGDapa78KoWfd51HyqKeGstP/M781tbWIXjsTSxedEy2LV/Kc75Vk6RzyyOcbBDqbdypQjyzmWdjxQtpDKknPmjr8ckqosDFSAWBPmW/S9lwt+6wA5SXCr7YOX3OeUfCNwOtzXvDgYZw2ALaObO1HL6y0Ahz7kEZaG6CFfAxyZeDygjZCBL8fASuD+MeshX9rbiwNlOdeAAxk5+bLazGF9a4HgUpCPc8VkgBcfuBq4CYlENRasHcyZl+ylaYRIfX8vicq84zpUlioPKFaGm6nD/+/+bJR5UVS5bHZVm9rEShwzMsD1ZKRIqe05/q6aPDd13zP7KBS+2ANRcD9Ld7nN/RkHMmmCx9yEjHUO1CkxPKEDDmBwM8F8d5Oz+vOUpgL9mwfNFEQO2P79+E2V519uQMp6YcOBULQ6LRRUp6rtcezR6PcTsf5gtAHi9zRGYoHvQFvFzLUupHOEb982a8jK+6sOWwmvOcfhdF1yP2ElcWM3KkYeUtGPhLHbkJpBTdf9V9rQWWP0LC89c=
+
 before_install:
-- openssl aes-256-cbc -K $encrypted_7582392b6f43_key -iv $encrypted_7582392b6f43_iv -in src/main/resources/application.properties.enc -out src/main/resources/application.properties -d
+- openssl aes-256-cbc -k "$super_secret_password" -in src/main/resources/application.properties.enc -out src/main/resources/application.properties -d
